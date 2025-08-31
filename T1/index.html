@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4 – Taller Práctico de HTML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Inter;
+        }
+
+        header {
+            margin: 3rem 0 1rem 0;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px; 
+            text-decoration: none; 
+            color: #333;
+            transition: color 0.3s ease; 
+        }
+        nav a:hover {
+            color: #007bff; 
+        }
+
+        #Sobre-mi {
+            margin: 3rem 10rem 2rem 0;
+        }
+
+        #Sobre-mi h2 {
+            text-align: center;
+            font-size: 2em;
+            margin: 0rem;
+        }
+
+        #Sobre-mi div {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        #Sobre-mi img {
+            width: 200px;
+            height: auto;
+            border-radius: 15%;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        #Sobre-mi p {
+            text-align: right;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        #Proyectos {
+            margin: 2rem 0;
+        }
+
+        #Proyectos h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px 25px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        #Contacto {
+            margin: 2rem 0;
+        }
+
+        #Contacto h2 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 5rem;
+        }
+
+        input[type="text"], input[type="email"] {
+            padding: 0.5rem;
+            width: 300px;
+            max-width: 90%;
+        }
+
+        textarea {
+            padding: 0.5rem;
+            width: 300px;
+            max-width: 90%;
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 1em;
+            margin: 0rem 0rem 2rem 0;
+        }
+    </style>
+
+    <!-- Favicon estándar -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+
+    <!-- Iconos para dispositivos Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+
+    <!-- Icono para dispositivos Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+
+    <!-- Archivo manifest para compatibilidad con apps web progresivas -->
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+</head>
+
+<body>
+    <header>
+        <h1> Clase 4 <i class="fa-regular fa-file-code"></i> </h1>
+        <p> <i class="fa-solid fa-terminal"></i> Taller Práctico de HTML <br/> María José Jara Herrera</p>
+    </header>
+
+    <nav>
+        <span>
+            <a href="#">Inicio</a>
+            <a href="#Sobre-mi">Sobre mí</a>
+            <a href="#Proyectos">Proyectos</a>
+            <a href="#Contacto">Contacto</a>
+        </span>
+    </nav>
+
+    <div>
+        <section id="Sobre-mi">
+            <h2>Sobre mí</h2>
+            <div>
+                <img src="icon.png" alt="Foto de Perfil">
+                <p>
+                    ¡Hola! Soy María José, una entusiasta del desarrollo web con pasión por crear experiencias digitales atractivas y funcionales. <br/>
+                    Me encanta aprender nuevas tecnologías y mejorar mis habilidades en HTML, CSS y JavaScript. <br/>
+                    En mi tiempo libre, disfruto explorando nuevas tendencias en diseño web y trabajando en proyectos personales.
+                </p>
+            </div>
+        </section>
+
+        <section id="Proyectos">
+            <h2>Proyectos</h2>
+            <table>
+                <caption>Mis Proyectos Recientes</caption>
+                <thead>
+                    <th>Proyecto</th>
+                    <th>Habilidades</th>
+                    <th>GitHub</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Portfolio Personal</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td><a href="https://github.com/StoryChara/portfolio-storychara" target="_blank">Ver en GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td>PlanifiKlub</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td><a href="" target="_blank">Ver en GitHub</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="Contacto">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" placeholder="Nombre" type="text" minlength="10" maxlength="50" required>
+                <input type="email" placeholder="Correo Electrónico" type="email" autocomplete="email" required>
+                <textarea placeholder="Mensaje"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 María José Jara Herrera. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
