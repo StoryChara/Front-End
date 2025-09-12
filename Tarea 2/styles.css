@@ -1,0 +1,174 @@
+:root {
+    --primary-bg: #23272f;
+    --secondary-bg: #343b45cc;
+    --accent: #ffd600;
+    --button-bg: #262c36;
+    --button-hover: #393f4b;
+    --operator-bg: #ffd600;
+    --operator-color: #23272f;
+    --btn-equals-bg: #13c2c2;
+    --btn-equals-color: #fff;
+    --border-radius: 18px;
+    --box-shadow: 0 8px 24px 0 rgba(16, 18, 27, .35);
+    --font-main: 'Segoe UI', Rubik, Arial, sans-serif;
+}
+
+/* Fondo general con gradiente */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2d394b 0%, #23272f 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-main);
+}
+
+/* Encabezado estilizado */
+.header {
+    margin: 32px 0 16px 0;
+    text-align: center;
+}
+.header h1 {
+    color: var(--accent);
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: 600;
+    text-shadow: 0 2px 8px #0006;
+}
+
+/* Caja principal de la calculadora: glass/glow effect */
+.calculadora {
+    margin: 32px 0;
+    padding: 30px 24px 24px 24px;
+    border-radius: var(--border-radius);
+    background: var(--secondary-bg);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(9px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.14);
+    width: 340px;
+    max-width: 94vw;
+    /* Centrado en móviles */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pantalla */
+#pantalla {
+    background: rgba(255,255,255,.12);
+    border-radius: 12px;
+    border: none;
+    font-size: 2.2rem;
+    color: #fff;
+    text-align: right;
+    margin-bottom: 18px;
+    min-height: 56px;
+    padding: 18px 16px 13px 8px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px #0002;
+    letter-spacing: 1.5px;
+    transition: background 0.2s;
+}
+
+/* Grid de botones */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 64px);
+    grid-gap: 14px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botones generales */
+button {
+    font-family: inherit;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.3rem;
+    padding: 17px 0;
+    background: var(--button-bg);
+    color: #f3f3f7;
+    box-shadow: 0 2px 8px #0002;
+    transition: 
+        background 0.15s, 
+        color 0.2s, 
+        transform 0.1s;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Animación de click */
+button:active {
+    transform: scale(0.97);
+    filter: brightness(1.14);
+}
+
+/* Botón igual destacado */
+#igual {
+    background: var(--btn-equals-bg);
+    color: var(--btn-equals-color);
+    font-weight: bold;
+    grid-column: span 1;
+    box-shadow: 0 2px 14px #13c2c277;
+}
+
+/* Operadores destacados */
+.operador {
+    background: var(--operator-bg);
+    color: var(--operator-color);
+    font-weight: bold;
+    transition: background .18s, color .18s, box-shadow .15s;
+    filter: brightness(0.97);
+}
+.operador:active, .operador:hover {
+    background: #fff;
+    color: #ff9100;
+    box-shadow: 0 0 0 3px #ffd60055;
+}
+
+#decimal {
+    font-weight: bold;
+    color: #49f3c7;
+}
+
+#limpiar {
+    background: #ff5252;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 14px #ff525266;
+}
+#limpiar:hover,
+#limpiar:active {
+    background: #ffa1a1;
+    color: #6c2020;
+}
+
+/* Efecto hover para números */
+.numero:hover {
+    background: var(--button-hover);
+    color: #ffd600;
+}
+
+/* Responsive para móviles */
+@media (max-width: 450px) {
+    .calculadora {
+        width: 98vw;
+        padding: 14px 1vw;
+    }
+    .botones {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+    }
+    #pantalla {
+        font-size: 1.6rem;
+        min-height: 40px;
+        padding: 13px 7px;
+    }
+    button {
+        font-size: 1.09rem;
+        padding: 12px 0;
+    }
+}
