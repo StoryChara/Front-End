@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital Académica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+
+<body>
+    <div class="main-grid">
+        <!-- Header -->
+        <header class="header">
+            <h1>📚 Biblioteca Digital Académica</h1>
+            <p>Tu portal al conocimiento y la literatura universal</p>
+            <!-- Carrito visual en el header -->
+            <div class="cart-header">
+                <button id="cartButton" class="cart-btn" title="Ver carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Filtrar por Categoría</h2>
+            <button class="mobile-filter-toggle" onclick="toggleFilters()">
+                Mostrar Filtros
+            </button>
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-category="all">Todas las Categorías</button>
+                <button class="filter-btn" data-category="ficcion">Ficción</button>
+                <button class="filter-btn" data-category="no-ficcion">No ficción</button>
+                <button class="filter-btn" data-category="ciencia">Ciencia</button>
+                <button class="filter-btn" data-category="historia">Historia</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h2>Catálogo de Libros</h2>
+
+            <!-- AÑADIDO: Mensaje de error global (oculto por defecto) -->
+            <div id="errorMsg" style="display:none;color:red;padding:1em;margin-bottom:1em"></div>
+
+            <!-- AÑADIDO: Paginador dinámico -->
+            <div id="paginator" class="paginator" style="margin-bottom:1.5em;"></div>
+
+            <div class="book-catalog" id="bookCatalog">
+                <!-- Books will be inserted here by JavaScript -->
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Biblioteca Digital Académica. Todos los derechos reservados.</p>
+            <p>Fomentando el acceso libre al conocimiento</p>
+        </footer>
+    </div>
+
+    <!-- Modal Carrito -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Tu carrito de compras</h2>
+            <div id="cartItems"></div>
+            <div class="cart-summary">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button id="emptyCartBtn" class="cart-empty-btn">Vaciar carrito</button>
+        </div>
+    </div>
+
+    <!-- Lógica JS principal -->
+    <script src="script.js"></script>
+</body>
+
+</html>
